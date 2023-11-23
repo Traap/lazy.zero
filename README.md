@@ -8,7 +8,7 @@ Traap's lazy.nvim and lsp.zero.nvim configuration.
 
 ### Installation
 ```
-clone https://github.com/Traap/lazy.zero ~/.config/zero
+git clone https://github.com/Traap/lazy.zero ~/.config/zero
 ```
 
 ```
