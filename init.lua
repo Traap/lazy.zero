@@ -32,39 +32,69 @@ require('lazy').setup({
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
 
-	{ -- LSP Support
+  { -- LSP Support
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
     lazy = true,
     config = false,
   },
 
-	{ -- LSP Config
+  { -- LSP Config
     'neovim/nvim-lspconfig',
     dependencies = {
       {'hrsh7th/cmp-nvim-lsp'},
     }
   },
 
-	{ -- Autocompletion
+  { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
       {'L3MON4D3/LuaSnip'}
     },
   },
 
-	{ -- Use which-key to show lsp_zero default_keymaps
+  { -- Use which-key to show lsp_zero default_keymaps
     'folke/which-key.nvim',
-		event = "VeryLazy",
---		keys = {
---			{"<leader>wk", "WhichKey", "Toggle Whichkey"},
---		},
+    event = "VeryLazy",
+    --		keys = {
+    --			{"<leader>wk", "WhichKey", "Toggle Whichkey"},
+    --		},
     config = function()
       require('which-key').setup(
-			  {plugins = {spelling = true}}
-			)
+      {plugins = {spelling = true}}
+      )
     end,
   },
+
+  { -- Vim/NeoVim/Tmux seamless navigation.
+    "christoomey/vim-tmux-navigator",
+    event =  "VeryLazy",
+
+    keys = {
+      {"<c-h>", "<cmd>TmuxNavigateLeft<cr>", "Navigate Window Left"},
+      {"<c-j>", "<cmd>TmuxNavigateDown<cr>", "Navigate Window Down"},
+      {"<c-k>", "<cmd>TmuxNavigateUp<cr>", "Navigate Window Up"},
+      {"<c-l>", "<cmd>TmuxNavigateRight<cr>", "Navigate Window Right"},
+    },
+  },
+
+  { -- File navigation
+    "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      {"<c-n>", "<cmd>Neotree toggle<cr>"},
+      {"<leader>nf", "<cmd>Neotree focus<cr>"},
+    },
+
+    opts = function(_, opts)
+      opts.filesystem = {
+        bind_to_cwd = false,
+        follow_current_file = { enabled = true}
+      }
+      opts.window = { position = "right", }
+    end,
+  }
+
+
 })
 
 -- A plesant colorcheme.
