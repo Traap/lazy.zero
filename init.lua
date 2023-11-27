@@ -69,7 +69,6 @@ require('lazy').setup({
   { -- Vim/NeoVim/Tmux seamless navigation.
     "christoomey/vim-tmux-navigator",
     event =  "VeryLazy",
-
     keys = {
       {"<c-h>", "<cmd>TmuxNavigateLeft<cr>", "Navigate Window Left"},
       {"<c-j>", "<cmd>TmuxNavigateDown<cr>", "Navigate Window Down"},
@@ -80,6 +79,10 @@ require('lazy').setup({
 
   { -- File navigation
     "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim"
+    },
     keys = {
       {"<c-n>", "<cmd>Neotree toggle<cr>"},
       {"<leader>nf", "<cmd>Neotree focus<cr>"},
@@ -92,8 +95,7 @@ require('lazy').setup({
       }
       opts.window = { position = "right", }
     end,
-  }
-
+  },
 
 })
 
