@@ -39,7 +39,7 @@ require('lazy').setup({
     config = false,
     keys = {
       {"<leader>i", "<cmd>LspInfo<cr>", "Lsp Info"},
-      {"<leader>I", "<cmd>LspInfo<cr>", "Lsp Install"},
+      {"<leader>I", "<cmd>LspInstall<cr>", "Lsp Install"},
     },
   },
 
