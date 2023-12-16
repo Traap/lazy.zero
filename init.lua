@@ -56,9 +56,6 @@ require('lazy').setup({
   { -- Use which-key to show lsp_zero default_keymaps
     'folke/which-key.nvim',
     event = "VeryLazy",
-    --		keys = {
-    --			{"<leader>wk", "WhichKey", "Toggle Whichkey"},
-    --		},
     config = function()
       require('which-key').setup(
       {plugins = {spelling = true}}
