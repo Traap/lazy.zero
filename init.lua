@@ -37,6 +37,10 @@ require('lazy').setup({
     branch = 'v3.x',
     lazy = true,
     config = false,
+    keys = {
+      {"<leader>i", "<cmd>LspInfo<cr>", "Lsp Info"},
+      {"<leader>I", "<cmd>LspInfo<cr>", "Lsp Install"},
+    },
   },
 
   { -- LSP Config
